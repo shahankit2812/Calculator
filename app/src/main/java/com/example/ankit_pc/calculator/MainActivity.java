@@ -97,37 +97,34 @@ public class MainActivity extends ActionBarActivity {
                 textView.setText(d.append(((Button) v).getText().toString()));
                 break;
             case R.id.buttonEquals:
-                System.out.println("inside button");
                 String s[];
-                if(d.toString().contains("+")) {
-                    System.out.println("inside");
-                    s = d.toString().split("\\+");
-                    //System.out.println(s[0]);
-                    //System.out.println(s[1]);
-                    answer=Double.parseDouble(s[0])+Double.parseDouble(s[1]);
-                    textView.setText(answer.toString());
-                }
-                else if(d.toString().contains("*")) {
-                    s = d.toString().split("\\*");
-                    answer=Double.parseDouble(s[0])*Double.parseDouble(s[1]);
-                    textView.setText(answer.toString());
-                }
-                else if(d.toString().contains("-")) {
-                    s = d.toString().split("\\-");
-                    answer=Double.parseDouble(s[0])-Double.parseDouble(s[1]);
-                    textView.setText(answer.toString());
-                }
-                else if(d.toString().contains("/")) {
-                    s = d.toString().split("/");
-                    answer=Double.parseDouble(s[0])/Double.parseDouble(s[1]);
-                    textView.setText(answer.toString());
-                }
-                if(d.toString().contains("^")) {
-                    s = d.toString().split("\\^");
-                    answer=Math.pow(Double.parseDouble(s[0]),Double.parseDouble(s[1]));
-                    textView.setText(answer.toString());
-                }
-                  break;
+                if (d.toString().contains("+")) {
+                        System.out.println("inside");
+                        s = d.toString().split("\\+");
+                        //System.out.println(s[0]);
+                        //System.out.println(s[1]);
+                        answer = Double.parseDouble(s[0]) + Double.parseDouble(s[1]);
+                        textView.setText(answer.toString());
+                    } else if (d.toString().contains("*")) {
+                        s = d.toString().split("\\*");
+                        answer = Double.parseDouble(s[0]) * Double.parseDouble(s[1]);
+                        textView.setText(answer.toString());
+                    } else if (d.toString().contains("-")) {
+                        s = d.toString().split("\\-");
+                        answer = Double.parseDouble(s[0]) - Double.parseDouble(s[1]);
+                        textView.setText(answer.toString());
+                    } else if (d.toString().contains("/")) {
+                        s = d.toString().split("/");
+                        answer = Double.parseDouble(s[0]) / Double.parseDouble(s[1]);
+                        textView.setText(answer.toString());
+                    }
+                    if (d.toString().contains("^")) {
+                        s = d.toString().split("\\^");
+                        answer = Math.pow(Double.parseDouble(s[0]), Double.parseDouble(s[1]));
+                        textView.setText(answer.toString());
+                    }
+                d=new StringBuffer(textView.getText().toString());
+                break;
             case R.id.buttonDelete:
                 b=(Button)v;
                 String delete=textView.getText().toString();
